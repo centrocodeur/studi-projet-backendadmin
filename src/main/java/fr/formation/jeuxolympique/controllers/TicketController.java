@@ -11,6 +11,7 @@ import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -55,6 +56,7 @@ public class TicketController {
 
 
     @PostMapping("/create")
+    //@PreAuthorize("hasAnyRole('ADMIN_MANAGER', 'ADMIN')")
     public String createTicket(@Valid @ModelAttribute TicketDto ticketDto, BindingResult result){
         if(ticketDto.getImageFile().isEmpty()){
             result.addError(new FieldError("ticketDto", "imageFile", "The image file is required"));
@@ -103,6 +105,7 @@ public class TicketController {
     }
 
     @GetMapping(value = "/edit")
+    //@PreAuthorize("hasAnyRole('ADMIN_MANAGER', 'ADMIN')")
     public String showEditPage(Model model, @RequestParam int id){
 
         try{
