@@ -31,32 +31,12 @@ public class UserServiceImpl implements UserService {
     private PasswordEncoder passwordEncoder;
 
 
+
+
+
+    // for the test only
+
     /*
-
-    public User registerUser(String lastName, String firstName, String password, String email, Role role ){
-
-        if (password ==null && email ==null) {
-            return  null;
-        } else {
-            User user = new User();
-            user.setLastName(lastName);
-            user.setFirstName(firstName);
-            user.setPassword(password);
-            user.setEmail(email);
-            user.setRole(role);
-            user.setActivated(true);
-
-           userRepository.save(user);
-           return user;
-
-        }
-
-    }
-
-     */
-
-
-
 
    @PostConstruct
     public void postConstruct() {
@@ -73,6 +53,8 @@ public class UserServiceImpl implements UserService {
         user.setFirstName("adminmanager");
         userRepository.save(user);
     }
+
+     */
 
 
 

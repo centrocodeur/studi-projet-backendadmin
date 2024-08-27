@@ -6,4 +6,5 @@ import javax.lang.model.type.IntersectionType;
 
 public interface TicketService {
     public Ticket get(Integer id);
+
 }
